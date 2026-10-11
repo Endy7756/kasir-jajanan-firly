@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jajanan Firly - Sistem Kasir Profesional</title>
-    <!-- Tailwind CSS -->
-    <script src="https://tailwindcss.com"></script>
-    <!-- Chart.js untuk Grafik -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
         
@@ -19,16 +14,14 @@
             box-sizing: border-box;
         }
         
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background-color: #f0f9ff; 
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f9ff;
         }
         
-        .bg-pastel-blue { background-color: #e0f2fe; }
-        .bg-pastel-pink { background-color: #fce7f3; }
-        .text-pastel-dark { color: #0369a1; }
-        
-        /* Fix untuk Input Fields - PENTING */
+        /* Fix untuk Input Fields */
         input[type="text"],
         input[type="password"],
         input[type="email"],
@@ -51,7 +44,6 @@
             opacity: 1 !important;
         }
         
-        /* Select dropdown arrow */
         select {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
             background-position: right 0.5rem center;
@@ -60,37 +52,33 @@
             padding-right: 2.5rem;
         }
         
-        /* Format Cetak Struk Bersih */
+        /* Format Cetak */
         @media print {
             body * { display: none !important; }
             #areaCetakStruk, #areaCetakStruk * { display: block !important; }
-            #areaCetakStruk { position: absolute; left: 0; top: 0; width: 100%; background: white !important; color: black !important; padding: 0; margin: 0; }
+            #areaCetakStruk { position: absolute; left: 0; top: 0; width: 100%; background: white !important; color: black !important; }
             .no-print { display: none !important; }
         }
         
-        /* Animasi smooth */
         input, select, textarea, button {
             transition: all 0.2s ease-in-out;
         }
-        
-        input:focus, select:focus, textarea:focus {
-            transform: translateY(-1px);
-        }
     </style>
 </head>
-<body class="text-gray-700">
+<body class="text-gray-700 overflow-x-hidden">
 
-    <!-- HALAMAN AUTENTIKASI (LOGIN / SIGNUP) -->
-    <div id="authPage" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-sky-50 to-pink-50">
+    <!-- HALAMAN LOGIN -->
+    <div id="authPage" class="min-h-screen w-screen flex items-center justify-center p-4 bg-gradient-to-br from-sky-50 to-pink-50">
         <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border-2 border-sky-100">
+            <!-- Header -->
             <div class="text-center mb-8">
-                <div class="mx-auto w-24 h-24 rounded-full bg-gradient-to-br from-sky-100 to-pink-100 flex items-center justify-center mb-4 border-2 border-pink-200 overflow-hidden shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-12 h-12 text-sky-600">
-                        <path d="M6 9L12 13l6-4M6 9v6c0 1 .895 2 2 2h8c1.105 0 2-1 2-2V9M6 9L3 7.5C2.5 7 2 7.5 2 8.5v7c0 1 .5 1.5 1 1.5l3-1.5"></path>
+                <div class="mx-auto w-24 h-24 rounded-full bg-gradient-to-br from-sky-100 to-pink-100 flex items-center justify-center mb-4 border-4 border-pink-200 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-12 h-12 text-sky-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </div>
                 <h2 class="text-3xl font-bold text-sky-700">Jajanan Firly</h2>
-                <p class="text-xs text-gray-500 mt-1">Sistem Manajemen Kasir & Gudang</p>
+                <p class="text-xs text-gray-500 mt-2">Sistem Manajemen Kasir & Gudang</p>
             </div>
 
             <!-- Form Login -->
@@ -102,8 +90,8 @@
                         <input 
                             type="text" 
                             id="loginUser" 
-                            placeholder="Masukkan username Anda"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-300"
+                            placeholder="Masukkan username"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
                     <div>
@@ -111,17 +99,17 @@
                         <input 
                             type="password" 
                             id="loginPass" 
-                            placeholder="Masukkan password Anda"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-300"
+                            placeholder="Masukkan password"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
-                    <button onclick="prosesLogin()" class="w-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white p-3 rounded-lg font-semibold text-sm transition shadow-md">
+                    <button onclick="prosesLogin()" class="w-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition shadow-md">
                         Masuk ke Sistem
                     </button>
                     <div class="flex justify-between items-center text-xs mt-5 gap-2">
-                        <button onclick="toggleAuthView('signup')" class="text-sky-600 hover:text-sky-700 font-medium">Daftar Karyawan Baru</button>
+                        <button type="button" onclick="toggleAuthView('signup')" class="text-sky-600 hover:text-sky-700 font-medium">Daftar Karyawan Baru</button>
                         <span class="text-gray-300">•</span>
-                        <button onclick="lupaPassword()" class="text-gray-500 hover:text-gray-700 font-medium">Lupa Password?</button>
+                        <button type="button" onclick="lupaPassword()" class="text-gray-500 hover:text-gray-700 font-medium">Lupa Password?</button>
                     </div>
                 </div>
             </div>
@@ -131,12 +119,12 @@
                 <h3 class="text-lg font-semibold mb-5 text-gray-700">Pendaftaran Karyawan</h3>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-2">Nama Lengkap PIC</label>
+                        <label class="block text-xs font-medium text-gray-600 mb-2">Nama Lengkap</label>
                         <input 
                             type="text" 
                             id="regNama" 
                             placeholder="Contoh: Budi Santoso"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-300"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
                     <div>
@@ -145,7 +133,7 @@
                             type="text" 
                             id="regCabang" 
                             placeholder="Contoh: Cabang Jakarta"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-300"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
                     <div>
@@ -154,7 +142,7 @@
                             type="text" 
                             id="regUser" 
                             placeholder="Buat username unik"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-300"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
                     <div>
@@ -163,13 +151,13 @@
                             type="password" 
                             id="regPass" 
                             placeholder="Buat password yang kuat"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-300"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
                         >
                     </div>
-                    <button onclick="prosesSignup()" class="w-full bg-pink-500 hover:bg-pink-600 active:bg-pink-700 text-white p-3 rounded-lg font-semibold text-sm transition shadow-md mt-2">
+                    <button type="button" onclick="prosesSignup()" class="w-full bg-pink-500 hover:bg-pink-600 active:bg-pink-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition shadow-md">
                         Kirim Pengajuan Pendaftaran
                     </button>
-                    <button onclick="toggleAuthView('login')" class="w-full border-2 border-gray-300 text-gray-600 hover:bg-gray-50 p-3 rounded-lg text-xs font-medium transition mt-1">
+                    <button type="button" onclick="toggleAuthView('login')" class="w-full border-2 border-gray-300 text-gray-600 hover:bg-gray-50 py-3 px-4 rounded-lg text-xs font-medium transition">
                         ← Kembali ke Login
                     </button>
                 </div>
@@ -177,12 +165,13 @@
         </div>
     </div>
 
-    <!-- HALAMAN UTAMA APLIKASI KASIR (SETELAH LOGIN) -->
-    <div id="mainAppPage" class="hidden min-h-screen flex flex-col md:flex-row">
+    <!-- HALAMAN UTAMA SETELAH LOGIN -->
+    <div id="mainAppPage" class="hidden min-h-screen w-screen flex flex-col md:flex-row bg-gray-50">
         
-        <!-- SIDEBAR NAVIGASI -->
+        <!-- SIDEBAR -->
         <aside class="w-full md:w-64 bg-white border-r border-gray-200 flex flex-col justify-between shadow-sm no-print">
             <div>
+                <!-- Header Sidebar -->
                 <div class="p-5 border-b border-gray-200 flex items-center gap-3 bg-gradient-to-r from-sky-50 to-pink-50">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-pink-400 flex items-center justify-center text-white font-bold text-sm shadow-md">JF</div>
                     <div>
@@ -190,156 +179,191 @@
                         <p id="infoUserAktif" class="text-xs text-gray-400">Kasir: -</p>
                     </div>
                 </div>
+
+                <!-- Menu Navigasi -->
                 <nav class="p-4 space-y-2">
-                    <button onclick="pindahTab('dashboard')" id="btn-tab-dashboard" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium hover:bg-sky-50 text-gray-700 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <button type="button" onclick="pindahTab('dashboard')" id="btn-tab-dashboard" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition bg-sky-100 text-sky-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
                         Dashboard
                     </button>
-                    <button onclick="pindahTab('kasir')" id="btn-tab-kasir" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium hover:bg-sky-50 text-gray-700 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <button type="button" onclick="pindahTab('kasir')" id="btn-tab-kasir" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
                         Transaksi Kasir
                     </button>
-                    <button onclick="pindahTab('produk')" id="btn-tab-produk" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium hover:bg-sky-50 text-gray-700 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M12 5v14M5 12h14"></path></svg>
+                    <button type="button" onclick="pindahTab('produk')" id="btn-tab-produk" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                            <path d="M12 5v14M5 12h14"></path>
+                        </svg>
                         Kelola Produk
                     </button>
-                    <button onclick="pindahTab('gudang')" id="btn-tab-gudang" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium hover:bg-sky-50 text-gray-700 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M4 9h16M4 9l1.89-4.73A2 2 0 0 1 7.73 3h8.54a2 2 0 0 1 1.84 1.27L20 9M4 9v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9M9 5v4M15 5v4"></path></svg>
+                    <button type="button" onclick="pindahTab('gudang')" id="btn-tab-gudang" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                            <path d="M4 9h16M4 9l1.89-4.73A2 2 0 0 1 7.73 3h8.54a2 2 0 0 1 1.84 1.27L20 9M4 9v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"></path>
+                        </svg>
                         Master Gudang
                     </button>
-                    <button onclick="pindahTab('riwayat')" id="btn-tab-riwayat" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium hover:bg-sky-50 text-gray-700 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <button type="button" onclick="pindahTab('riwayat')" id="btn-tab-riwayat" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
                         Riwayat Penjualan
                     </button>
                 </nav>
             </div>
-            
+
+            <!-- Footer Sidebar -->
             <div class="p-4 border-t border-gray-200 space-y-3 bg-gray-50">
                 <div>
-                    <label class="block text-[10px] uppercase font-bold text-gray-500 mb-2">URL Google Apps Script</label>
+                    <label class="block text-[10px] uppercase font-bold text-gray-600 mb-2">URL Google Apps Script</label>
                     <input 
                         type="text" 
                         id="inputScriptUrl" 
-                        placeholder="Tempel URL Skrip Disini"
+                        placeholder="Tempel URL Skrip"
                         class="w-full px-3 py-2 border-2 border-gray-300 text-xs rounded-lg outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-200 bg-white hover:border-gray-400"
                     >
-                    <button onclick="simpanConfigUrl()" class="w-full mt-2 bg-gray-700 hover:bg-gray-800 text-white text-[10px] p-2 rounded-lg font-medium transition">
+                    <button type="button" onclick="simpanConfigUrl()" class="w-full mt-2 bg-gray-700 hover:bg-gray-800 text-white text-[10px] py-2 px-3 rounded-lg font-medium transition">
                         Simpan URL
                     </button>
                 </div>
-                <button onclick="prosesLogout()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-semibold transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3.5 h-3.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg>
+                <button type="button" onclick="prosesLogout()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-semibold transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-3.5 h-3.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
                     Keluar Sistem
                 </button>
             </div>
         </aside>
 
-        <!-- KONTEN HALAMAN UTAMA -->
-        <main class="flex-1 p-6 overflow-y-auto no-print bg-gradient-to-br from-sky-50 to-pink-50">
+        <!-- KONTEN UTAMA -->
+        <main class="flex-1 p-4 md:p-6 overflow-y-auto no-print bg-gradient-to-br from-sky-50 to-pink-50">
             
-            <!-- TAB 1: DASHBOARD -->
-            <section id="tab-dashboard" class="hidden space-y-6">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+            <!-- TAB DASHBOARD -->
+            <section id="tab-dashboard" class="space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-800">Ringkasan Dashboard</h2>
-                        <p class="text-xs text-gray-500 mt-1">Analisis metrik performa Jajanan Firly</p>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Dashboard</h2>
+                        <p class="text-xs text-gray-500 mt-1">Ringkasan performa Jajanan Firly</p>
                     </div>
-                    <select id="filterWaktuDashboard" onchange="renderDashboard()" class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-xs font-medium shadow-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-200">
+                    <select id="filterWaktuDashboard" onchange="renderDashboard()" class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-xs font-medium shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200">
                         <option value="hari">Hari Ini</option>
                         <option value="bulan">Bulan Ini</option>
                         <option value="tahun">Tahun Ini</option>
                     </select>
                 </div>
 
+                <!-- Card Statistik -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100 hover:shadow-md transition">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-emerald-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs text-gray-500 font-medium">Omzet Penjualan</p>
-                                <p id="dashOmzet" class="text-xl font-bold text-emerald-600 mt-1">Rp 0</p>
+                                <p class="text-xs text-gray-500 font-medium">Omzet</p>
+                                <p id="dashOmzet" class="text-lg md:text-xl font-bold text-emerald-600 mt-2">Rp 0</p>
                             </div>
                             <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 1.5c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5 10.5-4.701 10.5-10.5-4.701-10.5-10.5-10.5zm3.75 11.25h-2.25v2.25h-3v-2.25h-2.25v-3h2.25v-2.25h3v2.25h2.25v3z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs text-gray-500 font-medium">Total Transaksi</p>
-                                <p id="dashTransaksi" class="text-xl font-bold text-blue-600 mt-1">0</p>
+                                <p class="text-xs text-gray-500 font-medium">Transaksi</p>
+                                <p id="dashTransaksi" class="text-lg md:text-xl font-bold text-blue-600 mt-2">0</p>
                             </div>
                             <div class="p-3 bg-blue-50 text-blue-600 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-0.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-0.16.28-0.25.61-0.25 0.96 0 1.1 0.9 2 2 2h12v-2H7.42c-0.14 0-0.25-0.11-0.25-0.25l0.03-0.12 0.9-1.63h7.45c0.75 0 1.41-0.41 1.75-1.03l3.58-6.49c0.08-0.14 0.12-0.31 0.12-0.48 0-0.55-0.45-1-1-1H5.21l-0.94-2H1zm16 16c-1.1 0-1.99 0.9-1.99 2s0.89 2 1.99 2 2-0.9 2-2-0.9-2-2-2z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-purple-100 hover:shadow-md transition">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-purple-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-xs text-gray-500 font-medium">Produk Terjual</p>
-                                <p id="dashProduk" class="text-xl font-bold text-purple-600 mt-1">0</p>
+                                <p id="dashProduk" class="text-lg md:text-xl font-bold text-purple-600 mt-2">0</p>
                             </div>
                             <div class="p-3 bg-purple-50 text-purple-600 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-2.16-2.66c-.44-.53-1.25-.58-1.78-.15-.53.44-.58 1.25-.15 1.78l2.91 3.57c.39.49.96.75 1.54.75s1.15-.26 1.54-.75l3.5-4.29c.43-.53.39-1.34-.15-1.78-.53-.43-1.34-.39-1.78.15l-.71.86z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-2.16-2.66c-.44-.53-1.25-.58-1.78-.15-.53.44-.58 1.25-.15 1.78l2.91 3.57c.39.49.96.75 1.54.75s1.15-.26 1.54-.75l3.5-4.29c.43-.53.39-1.34-.15-1.78-.53-.43-1.34-.39-1.78.15l-.71.86z"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-xs text-gray-500 font-medium">Stok Rendah</p>
-                                <p id="dashStok" class="text-xl font-bold text-orange-600 mt-1">0</p>
+                                <p id="dashStok" class="text-lg md:text-xl font-bold text-orange-600 mt-2">0</p>
                             </div>
                             <div class="p-3 bg-orange-50 text-orange-600 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                <!-- Grafik -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-sm font-bold text-gray-800 mb-4">Grafik Penjualan</h3>
-                        <canvas id="chartPenjualan" class="max-h-64"></canvas>
+                        <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                            <p class="text-gray-400 text-sm">Grafik akan ditampilkan di sini</p>
+                        </div>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-sm font-bold text-gray-800 mb-4">Kategori Produk</h3>
-                        <canvas id="chartKategori" class="max-h-64"></canvas>
+                        <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                            <p class="text-gray-400 text-sm">Grafik akan ditampilkan di sini</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- TAB 2: TRANSAKSI KASIR -->
+            <!-- TAB KASIR -->
             <section id="tab-kasir" class="hidden space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800">Transaksi Kasir</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Transaksi Kasir</h2>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-gray-500 text-sm">Area Transaksi Kasir akan ditampilkan di sini</p>
                 </div>
             </section>
 
-            <!-- TAB 3: KELOLA PRODUK -->
+            <!-- TAB PRODUK -->
             <section id="tab-produk" class="hidden space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800">Kelola Produk</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Kelola Produk</h2>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-gray-500 text-sm">Area Kelola Produk akan ditampilkan di sini</p>
                 </div>
             </section>
 
-            <!-- TAB 4: MASTER GUDANG -->
+            <!-- TAB GUDANG -->
             <section id="tab-gudang" class="hidden space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800">Master Gudang</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Master Gudang</h2>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-gray-500 text-sm">Area Master Gudang akan ditampilkan di sini</p>
                 </div>
             </section>
 
-            <!-- TAB 5: RIWAYAT PENJUALAN -->
+            <!-- TAB RIWAYAT -->
             <section id="tab-riwayat" class="hidden space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800">Riwayat Penjualan</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Riwayat Penjualan</h2>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-gray-500 text-sm">Area Riwayat Penjualan akan ditampilkan di sini</p>
                 </div>
@@ -349,14 +373,9 @@
     </div>
 
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // State Management
         let currentUser = null;
-        let dataTransaksi = [];
 
-        // Toggle Auth Views
+        // Toggle antara Login dan Signup
         function toggleAuthView(view) {
             const loginForm = document.getElementById('loginFormSection');
             const signupForm = document.getElementById('signupFormSection');
@@ -370,30 +389,27 @@
             }
         }
 
-        // Process Login
+        // Proses Login
         function prosesLogin() {
             const username = document.getElementById('loginUser').value.trim();
             const password = document.getElementById('loginPass').value.trim();
 
             if (!username || !password) {
-                alert('Username dan Password harus diisi!');
+                alert('⚠️ Username dan Password harus diisi!');
                 return;
             }
 
-            // Simulasi login
             currentUser = username;
             document.getElementById('infoUserAktif').textContent = `Kasir: ${username}`;
             
-            // Tampilkan halaman utama
             document.getElementById('authPage').classList.add('hidden');
             document.getElementById('mainAppPage').classList.remove('hidden');
             
-            // Render dashboard
             pindahTab('dashboard');
             renderDashboard();
         }
 
-        // Process Signup
+        // Proses Signup
         function prosesSignup() {
             const nama = document.getElementById('regNama').value.trim();
             const cabang = document.getElementById('regCabang').value.trim();
@@ -401,118 +417,60 @@
             const password = document.getElementById('regPass').value.trim();
 
             if (!nama || !cabang || !username || !password) {
-                alert('Semua field harus diisi!');
+                alert('⚠️ Semua field harus diisi!');
                 return;
             }
 
-            alert(`Pendaftaran berhasil!\nNama: ${nama}\nCabang: ${cabang}\nUsername: ${username}`);
+            alert(`✅ Pendaftaran berhasil!\n\nNama: ${nama}\nCabang: ${cabang}\nUsername: ${username}`);
             
-            // Clear form
             document.getElementById('regNama').value = '';
             document.getElementById('regCabang').value = '';
             document.getElementById('regUser').value = '';
             document.getElementById('regPass').value = '';
             
-            // Kembali ke login
             toggleAuthView('login');
         }
 
-        // Tab Navigation
+        // Pindah Tab
         function pindahTab(tab) {
-            // Hide all tabs
             document.querySelectorAll('section[id^="tab-"]').forEach(el => {
                 el.classList.add('hidden');
             });
 
-            // Remove active button styling
             document.querySelectorAll('nav button').forEach(el => {
                 el.classList.remove('bg-sky-100', 'text-sky-700');
+                el.classList.add('text-gray-700');
             });
 
-            // Show selected tab
             const selectedTab = document.getElementById(`tab-${tab}`);
             if (selectedTab) {
                 selectedTab.classList.remove('hidden');
             }
 
-            // Highlight active button
             const activeBtn = document.getElementById(`btn-tab-${tab}`);
             if (activeBtn) {
+                activeBtn.classList.remove('text-gray-700');
                 activeBtn.classList.add('bg-sky-100', 'text-sky-700');
             }
         }
 
         // Render Dashboard
         function renderDashboard() {
-            // Simulasi data dashboard
             document.getElementById('dashOmzet').textContent = 'Rp 2.500.000';
             document.getElementById('dashTransaksi').textContent = '15';
             document.getElementById('dashProduk').textContent = '45';
             document.getElementById('dashStok').textContent = '8';
-
-            // Chart Penjualan
-            setTimeout(() => {
-                const ctxPenjualan = document.getElementById('chartPenjualan');
-                if (ctxPenjualan && ctxPenjualan.chart) {
-                    ctxPenjualan.chart.destroy();
-                }
-                if (ctxPenjualan && typeof Chart !== 'undefined') {
-                    ctxPenjualan.chart = new Chart(ctxPenjualan, {
-                        type: 'line',
-                        data: {
-                            labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
-                            datasets: [{
-                                label: 'Penjualan (Rp)',
-                                data: [200000, 350000, 280000, 420000, 500000, 450000, 380000],
-                                borderColor: '#0ea5e9',
-                                backgroundColor: 'rgba(14, 165, 233, 0.1)',
-                                borderWidth: 2,
-                                tension: 0.4
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: true,
-                            plugins: { legend: { display: true } }
-                        }
-                    });
-                }
-            }, 100);
-
-            // Chart Kategori
-            setTimeout(() => {
-                const ctxKategori = document.getElementById('chartKategori');
-                if (ctxKategori && ctxKategori.chart) {
-                    ctxKategori.chart.destroy();
-                }
-                if (ctxKategori && typeof Chart !== 'undefined') {
-                    ctxKategori.chart = new Chart(ctxKategori, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ['Makanan', 'Minuman', 'Snack', 'Dessert'],
-                            datasets: [{
-                                data: [30, 25, 25, 20],
-                                backgroundColor: ['#0ea5e9', '#ec4899', '#f59e0b', '#10b981']
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: true
-                        }
-                    });
-                }
-            }, 100);
         }
 
         // Simpan Config URL
         function simpanConfigUrl() {
             const url = document.getElementById('inputScriptUrl').value.trim();
             if (!url) {
-                alert('URL tidak boleh kosong!');
+                alert('⚠️ URL tidak boleh kosong!');
                 return;
             }
             localStorage.setItem('scriptUrl', url);
-            alert('URL berhasil disimpan!');
+            alert('✅ URL berhasil disimpan!');
         }
 
         // Logout
@@ -523,14 +481,19 @@
                 document.getElementById('authPage').classList.remove('hidden');
                 document.getElementById('loginUser').value = '';
                 document.getElementById('loginPass').value = '';
-                location.reload();
+                document.getElementById('loginUser').focus();
             }
         }
 
         // Lupa Password
         function lupaPassword() {
-            alert('Silakan hubungi admin untuk reset password');
+            alert('❓ Silakan hubungi admin untuk reset password');
         }
+
+        // Set focus saat halaman load
+        window.addEventListener('load', function() {
+            document.getElementById('loginUser').focus();
+        });
     </script>
 
 </body>
