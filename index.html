@@ -21,7 +21,6 @@
             background-color: #f0f9ff;
         }
         
-        /* Fix untuk Input Fields */
         input[type="text"],
         input[type="password"],
         input[type="email"],
@@ -45,14 +44,13 @@
         }
         
         select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
             background-position: right 0.5rem center;
             background-repeat: no-repeat;
             background-size: 1.5em 1.5em;
             padding-right: 2.5rem;
         }
         
-        /* Format Cetak */
         @media print {
             body * { display: none !important; }
             #areaCetakStruk, #areaCetakStruk * { display: block !important; }
@@ -67,10 +65,8 @@
 </head>
 <body class="text-gray-700 overflow-x-hidden">
 
-    <!-- HALAMAN LOGIN -->
     <div id="authPage" class="min-h-screen w-screen flex items-center justify-center p-4 bg-gradient-to-br from-sky-50 to-pink-50">
         <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border-2 border-sky-100">
-            <!-- Header -->
             <div class="text-center mb-8">
                 <div class="mx-auto w-24 h-24 rounded-full bg-gradient-to-br from-sky-100 to-pink-100 flex items-center justify-center mb-4 border-4 border-pink-200 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-12 h-12 text-sky-600">
@@ -81,27 +77,16 @@
                 <p class="text-xs text-gray-500 mt-2">Sistem Manajemen Kasir & Gudang</p>
             </div>
 
-            <!-- Form Login -->
             <div id="loginFormSection">
                 <h3 class="text-lg font-semibold mb-5 text-gray-700">Silakan Masuk</h3>
                 <div class="space-y-4">
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Username</label>
-                        <input 
-                            type="text" 
-                            id="loginUser" 
-                            placeholder="Masukkan username"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="text" id="loginUser" placeholder="Masukkan username" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Password</label>
-                        <input 
-                            type="password" 
-                            id="loginPass" 
-                            placeholder="Masukkan password"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="password" id="loginPass" placeholder="Masukkan password" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <button onclick="prosesLogin()" class="w-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition shadow-md">
                         Masuk ke Sistem
@@ -114,45 +99,24 @@
                 </div>
             </div>
 
-            <!-- Form Signup -->
             <div id="signupFormSection" class="hidden">
                 <h3 class="text-lg font-semibold mb-5 text-gray-700">Pendaftaran Karyawan</h3>
                 <div class="space-y-4">
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Nama Lengkap</label>
-                        <input 
-                            type="text" 
-                            id="regNama" 
-                            placeholder="Contoh: Budi Santoso"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="text" id="regNama" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Cabang Toko</label>
-                        <input 
-                            type="text" 
-                            id="regCabang" 
-                            placeholder="Contoh: Cabang Jakarta"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="text" id="regCabang" placeholder="Contoh: Cabang Jakarta" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Username Baru</label>
-                        <input 
-                            type="text" 
-                            id="regUser" 
-                            placeholder="Buat username unik"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="text" id="regUser" placeholder="Buat username unik" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-600 mb-2">Password</label>
-                        <input 
-                            type="password" 
-                            id="regPass" 
-                            placeholder="Buat password yang kuat"
-                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400"
-                        >
+                        <input type="password" id="regPass" placeholder="Buat password yang kuat" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none text-sm hover:border-gray-400">
                     </div>
                     <button type="button" onclick="prosesSignup()" class="w-full bg-pink-500 hover:bg-pink-600 active:bg-pink-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition shadow-md">
                         Kirim Pengajuan Pendaftaran
@@ -165,13 +129,9 @@
         </div>
     </div>
 
-    <!-- HALAMAN UTAMA SETELAH LOGIN -->
     <div id="mainAppPage" class="hidden min-h-screen w-screen flex flex-col md:flex-row bg-gray-50">
-        
-        <!-- SIDEBAR -->
         <aside class="w-full md:w-64 bg-white border-r border-gray-200 flex flex-col justify-between shadow-sm no-print">
             <div>
-                <!-- Header Sidebar -->
                 <div class="p-5 border-b border-gray-200 flex items-center gap-3 bg-gradient-to-r from-sky-50 to-pink-50">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-pink-400 flex items-center justify-center text-white font-bold text-sm shadow-md">JF</div>
                     <div>
@@ -180,9 +140,8 @@
                     </div>
                 </div>
 
-                <!-- Menu Navigasi -->
                 <nav class="p-4 space-y-2">
-                    <button type="button" onclick="pindahTab('dashboard')" id="btn-tab-dashboard" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition bg-sky-100 text-sky-700">
+                    <button type="button" onclick="pindahTab('dashboard')" id="btn-tab-dashboard" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
@@ -191,7 +150,7 @@
                         </svg>
                         Dashboard
                     </button>
-                    <button type="button" onclick="pindahTab('kasir')" id="btn-tab-kasir" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                    <button type="button" onclick="pindahTab('kasir')" id="btn-tab-kasir" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
@@ -199,19 +158,19 @@
                         </svg>
                         Transaksi Kasir
                     </button>
-                    <button type="button" onclick="pindahTab('produk')" id="btn-tab-produk" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                    <button type="button" onclick="pindahTab('produk')" id="btn-tab-produk" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                             <path d="M12 5v14M5 12h14"></path>
                         </svg>
                         Kelola Produk
                     </button>
-                    <button type="button" onclick="pindahTab('gudang')" id="btn-tab-gudang" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                    <button type="button" onclick="pindahTab('gudang')" id="btn-tab-gudang" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                             <path d="M4 9h16M4 9l1.89-4.73A2 2 0 0 1 7.73 3h8.54a2 2 0 0 1 1.84 1.27L20 9M4 9v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"></path>
                         </svg>
                         Master Gudang
                     </button>
-                    <button type="button" onclick="pindahTab('riwayat')" id="btn-tab-riwayat" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 transition">
+                    <button type="button" onclick="pindahTab('riwayat')" id="btn-tab-riwayat" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
@@ -221,16 +180,10 @@
                 </nav>
             </div>
 
-            <!-- Footer Sidebar -->
             <div class="p-4 border-t border-gray-200 space-y-3 bg-gray-50">
                 <div>
                     <label class="block text-[10px] uppercase font-bold text-gray-600 mb-2">URL Google Apps Script</label>
-                    <input 
-                        type="text" 
-                        id="inputScriptUrl" 
-                        placeholder="Tempel URL Skrip"
-                        class="w-full px-3 py-2 border-2 border-gray-300 text-xs rounded-lg outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-200 bg-white hover:border-gray-400"
-                    >
+                    <input type="text" id="inputScriptUrl" placeholder="Tempel URL Skrip" class="w-full px-3 py-2 border-2 border-gray-300 text-xs rounded-lg outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-200 bg-white hover:border-gray-400">
                     <button type="button" onclick="simpanConfigUrl()" class="w-full mt-2 bg-gray-700 hover:bg-gray-800 text-white text-[10px] py-2 px-3 rounded-lg font-medium transition">
                         Simpan URL
                     </button>
@@ -244,24 +197,20 @@
             </div>
         </aside>
 
-        <!-- KONTEN UTAMA -->
         <main class="flex-1 p-4 md:p-6 overflow-y-auto no-print bg-gradient-to-br from-sky-50 to-pink-50">
-            
-            <!-- TAB DASHBOARD -->
-            <section id="tab-dashboard" class="space-y-6">
+            <section id="tab-dashboard" class="space-y-6 hidden">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Dashboard</h2>
                         <p class="text-xs text-gray-500 mt-1">Ringkasan performa Jajanan Firly</p>
                     </div>
-                    <select id="filterWaktuDashboard" onchange="renderDashboard()" class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-xs font-medium shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200">
+                    <select id="filterWaktuDashboard" onchange="renderDashboard()" class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-xs font-medium shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none">
                         <option value="hari">Hari Ini</option>
                         <option value="bulan">Bulan Ini</option>
                         <option value="tahun">Tahun Ini</option>
                     </select>
                 </div>
 
-                <!-- Card Statistik -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-emerald-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
@@ -276,7 +225,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition">
                         <div class="flex items-center justify-between">
                             <div>
@@ -285,7 +234,7 @@
                             </div>
                             <div class="p-3 bg-blue-50 text-blue-600 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
-                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25L9.1 15h7.45c.75 0 1.41-.41 1.75-1.03L22.5 5H6.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"/>
                                 </svg>
                             </div>
                         </div>
@@ -299,7 +248,7 @@
                             </div>
                             <div class="p-3 bg-purple-50 text-purple-600 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
-                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-2.16-2.66c-.44-.53-1.25-.58-1.78-.15-.53.44-.58 1.25-.15 1.78l2.91 3.57c.39.49.96.75 1.54.75s1.15-.26 1.54-.75l3.5-4.29c.43-.53.39-1.34-.15-1.78-.53-.43-1.34-.39-1.78.15l-.71.86z"/>
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-2.16-2.66c-.44-.53-1.25-.58-1.78-.1l-1.2 1.45c-.53.64-.43 1.61.24 2.15.67.54 1.63.48 2.15-.18l1.7-2.08 2.13 2.63c.54.66 1.5.71 2.14.12l2.22-1.9c.72-.62.79-1.75.15-2.46-.62-.7-1.75-.78-2.46-.15l-1.4 1.2z"/>
                                 </svg>
                             </div>
                         </div>
@@ -320,7 +269,6 @@
                     </div>
                 </div>
 
-                <!-- Grafik -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-sm font-bold text-gray-800 mb-4">Grafik Penjualan</h3>
@@ -337,49 +285,187 @@
                 </div>
             </section>
 
-            <!-- TAB KASIR -->
             <section id="tab-kasir" class="hidden space-y-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Transaksi Kasir</h2>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <p class="text-gray-500 text-sm">Area Transaksi Kasir akan ditampilkan di sini</p>
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Transaksi Kasir</h2>
+                    <div class="flex gap-3">
+                        <button type="button" onclick="tambahProdukPilihan()" class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-medium">+ Tambah Produk</button>
+                        <button type="button" onclick="selesaikanTransaksi()" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium">Selesaikan</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 xl:grid-cols-[1.5fr_0.9fr] gap-6">
+                    <div class="space-y-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                            <div class="flex flex-col md:flex-row gap-3">
+                                <input id="searchProdukKasir" type="text" placeholder="Cari produk / kode barcode" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                                <select id="filterKategoriKasir" class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                                    <option value="all">Semua Kategori</option>
+                                    <option value="Minuman">Minuman</option>
+                                    <option value="Makanan">Makanan</option>
+                                    <option value="Snack">Snack</option>
+                                    <option value="Cemilan">Cemilan</option>
+                                </select>
+                            </div>
+                            <div id="produkListKasir" class="mt-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800">Keranjang</h3>
+                            <span id="jumlahItemCart" class="text-xs bg-sky-100 text-sky-700 px-2 py-1 rounded-full font-semibold">0 item</span>
+                        </div>
+
+                        <div id="cartList" class="space-y-3 max-h-[420px] overflow-y-auto pr-1"></div>
+
+                        <div class="mt-5 border-t pt-4 space-y-3">
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Subtotal</span>
+                                <span id="subtotalTransaksi">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Diskon</span>
+                                <span id="diskonTransaksi">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Pajak</span>
+                                <span id="pajakTransaksi">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-lg font-bold text-gray-800">
+                                <span>Total</span>
+                                <span id="totalTransaksi">Rp 0</span>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-600 mb-2">Metode Bayar</label>
+                                <select id="metodeBayar" class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none">
+                                    <option value="Tunai">Tunai</option>
+                                    <option value="QRIS">QRIS</option>
+                                    <option value="Debit">Debit</option>
+                                    <option value="Kredit">Kredit</option>
+                                </select>
+                            </div>
+                            <button type="button" onclick="selesaikanTransaksi()" class="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg font-semibold text-sm">Bayar Sekarang</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- TAB PRODUK -->
             <section id="tab-produk" class="hidden space-y-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Kelola Produk</h2>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <p class="text-gray-500 text-sm">Area Kelola Produk akan ditampilkan di sini</p>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Kelola Produk</h2>
+                    <button type="button" onclick="tambahProdukBaru()" class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-medium">+ Produk Baru</button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex flex-col md:flex-row gap-3 mb-4">
+                        <input id="searchProdukTable" type="text" placeholder="Cari nama produk atau kode" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                        <select id="filterKategoriProduk" class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                            <option value="all">Semua Kategori</option>
+                            <option value="Minuman">Minuman</option>
+                            <option value="Makanan">Makanan</option>
+                            <option value="Snack">Snack</option>
+                            <option value="Cemilan">Cemilan</option>
+                        </select>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm">
+                            <thead>
+                                <tr class="bg-sky-50 text-gray-700 text-left">
+                                    <th class="p-3 font-semibold">Produk</th>
+                                    <th class="p-3 font-semibold">Kategori</th>
+                                    <th class="p-3 font-semibold">Harga</th>
+                                    <th class="p-3 font-semibold">Stok</th>
+                                    <th class="p-3 font-semibold">Status</th>
+                                    <th class="p-3 font-semibold">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="produkTableBody"></tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
-            <!-- TAB GUDANG -->
             <section id="tab-gudang" class="hidden space-y-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Master Gudang</h2>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <p class="text-gray-500 text-sm">Area Master Gudang akan ditampilkan di sini</p>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Master Gudang</h2>
+                    <button type="button" onclick="tambahStokBarang()" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium">+ Tambah Stok</button>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-4">
+                        <input id="searchGudang" type="text" placeholder="Cari barang" class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                        <select id="filterGudangKategori" class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                            <option value="all">Semua</option>
+                            <option value="Minuman">Minuman</option>
+                            <option value="Makanan">Makanan</option>
+                            <option value="Snack">Snack</option>
+                            <option value="Cemilan">Cemilan</option>
+                        </select>
+                        <select id="filterGudangStatus" class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sky-400 focus:ring-2 focus:ring-sky-200 outline-none text-sm">
+                            <option value="all">Semua Status</option>
+                            <option value="Aman">Aman</option>
+                            <option value="Rendah">Rendah</option>
+                            <option value="Habis">Habis</option>
+                        </select>
+                        <button type="button" onclick="renderGudang()" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg text-sm font-medium">Tampilkan</button>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm">
+                            <thead>
+                                <tr class="bg-emerald-50 text-gray-700 text-left">
+                                    <th class="p-3 font-semibold">Barang</th>
+                                    <th class="p-3 font-semibold">Kategori</th>
+                                    <th class="p-3 font-semibold">Stok</th>
+                                    <th class="p-3 font-semibold">Satuan</th>
+                                    <th class="p-3 font-semibold">Lokasi</th>
+                                    <th class="p-3 font-semibold">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gudangTableBody"></tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
-            <!-- TAB RIWAYAT -->
             <section id="tab-riwayat" class="hidden space-y-6">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Riwayat Penjualan</h2>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-gray-500 text-sm">Area Riwayat Penjualan akan ditampilkan di sini</p>
                 </div>
             </section>
-
         </main>
     </div>
 
     <script>
         let currentUser = null;
 
-        // Toggle antara Login dan Signup
+        const products = [
+            { id: 1, name: 'Es Teh Manis', category: 'Minuman', price: 5000, stock: 24, barcode: 'BRG-001' },
+            { id: 2, name: 'Kopi Susu', category: 'Minuman', price: 12000, stock: 18, barcode: 'BRG-002' },
+            { id: 3, name: 'Nasi Goreng', category: 'Makanan', price: 18000, stock: 12, barcode: 'BRG-003' },
+            { id: 4, name: 'Mie Goreng', category: 'Makanan', price: 16000, stock: 9, barcode: 'BRG-004' },
+            { id: 5, name: 'Bakso', category: 'Makanan', price: 20000, stock: 7, barcode: 'BRG-005' },
+            { id: 6, name: 'Keripik Singkong', category: 'Snack', price: 8000, stock: 30, barcode: 'BRG-006' },
+            { id: 7, name: 'Susu Coklat', category: 'Minuman', price: 9000, stock: 14, barcode: 'BRG-007' },
+            { id: 8, name: 'Pisang Goreng', category: 'Cemilan', price: 7000, stock: 16, barcode: 'BRG-008' }
+        ];
+
+        const gudang = [
+            { id: 1, name: 'Es Teh Manis', category: 'Minuman', stock: 24, unit: 'Dus', location: 'Rak A1', status: 'Aman' },
+            { id: 2, name: 'Kopi Susu', category: 'Minuman', stock: 18, unit: 'Botol', location: 'Rak A2', status: 'Aman' },
+            { id: 3, name: 'Nasi Goreng', category: 'Makanan', stock: 12, unit: 'Porsi', location: 'Rak B1', status: 'Aman' },
+            { id: 4, name: 'Keripik Singkong', category: 'Snack', stock: 5, unit: 'Pack', location: 'Rak C2', status: 'Rendah' },
+            { id: 5, name: 'Pisang Goreng', category: 'Cemilan', stock: 0, unit: 'Porsi', location: 'Rak C1', status: 'Habis' },
+            { id: 6, name: 'Mie Goreng', category: 'Makanan', stock: 9, unit: 'Porsi', location: 'Rak B2', status: 'Rendah' }
+        ];
+
+        let cart = [];
+
         function toggleAuthView(view) {
             const loginForm = document.getElementById('loginFormSection');
             const signupForm = document.getElementById('signupFormSection');
-            
             if (view === 'signup') {
                 loginForm.classList.add('hidden');
                 signupForm.classList.remove('hidden');
@@ -389,7 +475,6 @@
             }
         }
 
-        // Proses Login
         function prosesLogin() {
             const username = document.getElementById('loginUser').value.trim();
             const password = document.getElementById('loginPass').value.trim();
@@ -401,15 +486,17 @@
 
             currentUser = username;
             document.getElementById('infoUserAktif').textContent = `Kasir: ${username}`;
-            
+
             document.getElementById('authPage').classList.add('hidden');
             document.getElementById('mainAppPage').classList.remove('hidden');
-            
+
             pindahTab('dashboard');
             renderDashboard();
+            renderKasir();
+            renderProduk();
+            renderGudang();
         }
 
-        // Proses Signup
         function prosesSignup() {
             const nama = document.getElementById('regNama').value.trim();
             const cabang = document.getElementById('regCabang').value.trim();
@@ -422,16 +509,13 @@
             }
 
             alert(`✅ Pendaftaran berhasil!\n\nNama: ${nama}\nCabang: ${cabang}\nUsername: ${username}`);
-            
             document.getElementById('regNama').value = '';
             document.getElementById('regCabang').value = '';
             document.getElementById('regUser').value = '';
             document.getElementById('regPass').value = '';
-            
             toggleAuthView('login');
         }
 
-        // Pindah Tab
         function pindahTab(tab) {
             document.querySelectorAll('section[id^="tab-"]').forEach(el => {
                 el.classList.add('hidden');
@@ -452,9 +536,12 @@
                 activeBtn.classList.remove('text-gray-700');
                 activeBtn.classList.add('bg-sky-100', 'text-sky-700');
             }
+
+            if (tab === 'kasir') renderKasir();
+            if (tab === 'produk') renderProduk();
+            if (tab === 'gudang') renderGudang();
         }
 
-        // Render Dashboard
         function renderDashboard() {
             document.getElementById('dashOmzet').textContent = 'Rp 2.500.000';
             document.getElementById('dashTransaksi').textContent = '15';
@@ -462,7 +549,266 @@
             document.getElementById('dashStok').textContent = '8';
         }
 
-        // Simpan Config URL
+        function formatRupiah(value) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
+        }
+
+        function renderKasir() {
+            const search = document.getElementById('searchProdukKasir')?.value.toLowerCase() || '';
+            const category = document.getElementById('filterKategoriKasir')?.value || 'all';
+
+            const filtered = products.filter(product => {
+                const matchText = product.name.toLowerCase().includes(search) || product.barcode.toLowerCase().includes(search);
+                const matchCategory = category === 'all' || product.category === category;
+                return matchText && matchCategory;
+            });
+
+            const list = document.getElementById('produkListKasir');
+            if (!list) return;
+
+            list.innerHTML = filtered.map(product => `
+                <div class="border border-gray-200 rounded-xl p-3 bg-sky-50/40 hover:shadow-sm">
+                    <div class="flex justify-between items-start gap-2">
+                        <div>
+                            <p class="font-bold text-gray-800">${product.name}</p>
+                            <p class="text-[11px] text-gray-500">${product.category} • ${product.barcode}</p>
+                        </div>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full font-medium">${product.stock} stk</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="font-bold text-sky-700">${formatRupiah(product.price)}</span>
+                        <button type="button" onclick="tambahKeKeranjang(${product.id})" class="bg-sky-500 hover:bg-sky-600 text-white px-3 py-2 rounded-lg text-xs font-medium">Tambah</button>
+                    </div>
+                </div>
+            `).join('') || '<div class="col-span-full text-center text-sm text-gray-500 py-6">Produk tidak ditemukan.</div>';
+
+            renderCart();
+        }
+
+        function tambahKeKeranjang(productId) {
+            const product = products.find(item => item.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                if (existing.qty >= product.stock) {
+                    alert('⚠️ Stok produk tidak mencukupi!');
+                    return;
+                }
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            renderCart();
+        }
+
+        function kurangiKeranjang(productId) {
+            const item = cart.find(product => product.id === productId);
+            if (!item) return;
+            if (item.qty > 1) {
+                item.qty -= 1;
+            } else {
+                cart = cart.filter(product => product.id !== productId);
+            }
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartList = document.getElementById('cartList');
+            const subtotalEl = document.getElementById('subtotalTransaksi');
+            const diskonEl = document.getElementById('diskonTransaksi');
+            const pajakEl = document.getElementById('pajakTransaksi');
+            const totalEl = document.getElementById('totalTransaksi');
+            const jumlahItem = document.getElementById('jumlahItemCart');
+
+            if (!cartList || !subtotalEl || !diskonEl || !pajakEl || !totalEl || !jumlahItem) return;
+
+            if (cart.length === 0) {
+                cartList.innerHTML = '<div class="text-center text-sm text-gray-500 py-10">Keranjang masih kosong.</div>';
+                subtotalEl.textContent = 'Rp 0';
+                diskonEl.textContent = 'Rp 0';
+                pajakEl.textContent = 'Rp 0';
+                totalEl.textContent = 'Rp 0';
+                jumlahItem.textContent = '0 item';
+                return;
+            }
+
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.qty), 0);
+            const diskon = Math.round(subtotal * 0.05);
+            const pajak = Math.round((subtotal - diskon) * 0.1);
+            const total = subtotal - diskon + pajak;
+
+            cartList.innerHTML = cart.map(item => `
+                <div class="border border-gray-200 rounded-lg p-3 bg-gray-50">
+                    <div class="flex justify-between gap-3">
+                        <div>
+                            <p class="font-semibold text-sm text-gray-800">${item.name}</p>
+                            <p class="text-[11px] text-gray-500">${formatRupiah(item.price)} / item</p>
+                        </div>
+                        <button type="button" onclick="kurangiKeranjang(${item.id})" class="text-red-500 text-xs font-medium">Hapus</button>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="kurangiKeranjang(${item.id})" class="w-7 h-7 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold">-</button>
+                            <span class="font-medium text-sm">${item.qty}</span>
+                            <button type="button" onclick="tambahKeKeranjang(${item.id})" class="w-7 h-7 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold">+</button>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-800">${formatRupiah(item.price * item.qty)}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            subtotalEl.textContent = formatRupiah(subtotal);
+            diskonEl.textContent = formatRupiah(diskon);
+            pajakEl.textContent = formatRupiah(pajak);
+            totalEl.textContent = formatRupiah(total);
+            jumlahItem.textContent = `${cart.reduce((sum, item) => sum + item.qty, 0)} item`;
+        }
+
+        function selesaikanTransaksi() {
+            if (cart.length === 0) {
+                alert('⚠️ Keranjang masih kosong!');
+                return;
+            }
+            alert('✅ Transaksi berhasil diproses!');
+            cart = [];
+            renderCart();
+        }
+
+        function tambahProdukPilihan() {
+            const produk = products[0];
+            tambahKeKeranjang(produk.id);
+        }
+
+        function renderProduk() {
+            const search = document.getElementById('searchProdukTable')?.value.toLowerCase() || '';
+            const category = document.getElementById('filterKategoriProduk')?.value || 'all';
+
+            const filtered = products.filter(product => {
+                const matchText = product.name.toLowerCase().includes(search) || product.barcode.toLowerCase().includes(search);
+                const matchCategory = category === 'all' || product.category === category;
+                return matchText && matchCategory;
+            });
+
+            const body = document.getElementById('produkTableBody');
+            if (!body) return;
+
+            body.innerHTML = filtered.map(product => {
+                const status = product.stock > 10 ? 'Tersedia' : product.stock > 0 ? 'Hampir Habis' : 'Habis';
+                const statusClass = product.stock > 10 ? 'bg-emerald-100 text-emerald-700' : product.stock > 0 ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700';
+                return `
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3">
+                            <div>
+                                <p class="font-semibold text-gray-800">${product.name}</p>
+                                <p class="text-[11px] text-gray-500">${product.barcode}</p>
+                            </div>
+                        </td>
+                        <td class="p-3 text-gray-600">${product.category}</td>
+                        <td class="p-3 text-gray-600">${formatRupiah(product.price)}</td>
+                        <td class="p-3 text-gray-600">${product.stock}</td>
+                        <td class="p-3"><span class="px-2 py-1 rounded-full text-[11px] font-medium ${statusClass}">${status}</span></td>
+                        <td class="p-3">
+                            <div class="flex gap-2">
+                                <button type="button" onclick="editProduk(${product.id})" class="bg-sky-100 hover:bg-sky-200 text-sky-700 px-2 py-1 rounded text-[11px] font-medium">Edit</button>
+                                <button type="button" onclick="hapusProduk(${product.id})" class="bg-red-100 hover:bg-red-200 text-red-700 px-2 py-1 rounded text-[11px] font-medium">Hapus</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('') || '<tr><td colspan="6" class="p-6 text-center text-gray-500">Data produk tidak ditemukan.</td></tr>';
+        }
+
+        function tambahProdukBaru() {
+            const nama = prompt('Nama produk baru:');
+            if (!nama) return;
+            const harga = Number(prompt('Harga produk (angka):', '8000'));
+            const stok = Number(prompt('Stok awal:', '10'));
+            const kategori = prompt('Kategori produk:', 'Snack');
+            if (!harga || !stok) return;
+
+            products.push({
+                id: Date.now(),
+                name: nama,
+                category: kategori || 'Snack',
+                price: harga,
+                stock: stok,
+                barcode: `BRG-${String(products.length + 1).padStart(3, '0')}`
+            });
+
+            renderProduk();
+            renderKasir();
+        }
+
+        function editProduk(productId) {
+            const product = products.find(item => item.id === productId);
+            if (!product) return;
+            const nama = prompt('Edit nama produk:', product.name);
+            if (nama === null) return;
+            product.name = nama;
+            renderProduk();
+            renderKasir();
+        }
+
+        function hapusProduk(productId) {
+            const yakin = confirm('Apakah Anda yakin ingin menghapus produk ini?');
+            if (!yakin) return;
+            const idx = products.findIndex(item => item.id === productId);
+            if (idx !== -1) products.splice(idx, 1);
+            renderProduk();
+            renderKasir();
+        }
+
+        function renderGudang() {
+            const search = document.getElementById('searchGudang')?.value.toLowerCase() || '';
+            const category = document.getElementById('filterGudangKategori')?.value || 'all';
+            const status = document.getElementById('filterGudangStatus')?.value || 'all';
+
+            const filtered = gudang.filter(item => {
+                const matchText = item.name.toLowerCase().includes(search);
+                const matchCategory = category === 'all' || item.category === category;
+                const matchStatus = status === 'all' || item.status === status;
+                return matchText && matchCategory && matchStatus;
+            });
+
+            const body = document.getElementById('gudangTableBody');
+            if (!body) return;
+
+            body.innerHTML = filtered.map(item => {
+                const statusClass = item.status === 'Aman' ? 'bg-emerald-100 text-emerald-700' : item.status === 'Rendah' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700';
+                return `
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 font-semibold text-gray-800">${item.name}</td>
+                        <td class="p-3 text-gray-600">${item.category}</td>
+                        <td class="p-3 text-gray-600">${item.stock}</td>
+                        <td class="p-3 text-gray-600">${item.unit}</td>
+                        <td class="p-3 text-gray-600">${item.location}</td>
+                        <td class="p-3"><span class="px-2 py-1 rounded-full text-[11px] font-medium ${statusClass}">${item.status}</span></td>
+                    </tr>
+                `;
+            }).join('') || '<tr><td colspan="6" class="p-6 text-center text-gray-500">Data gudang tidak ditemukan.</td></tr>';
+        }
+
+        function tambahStokBarang() {
+            const nama = prompt('Nama barang:', 'Produk Baru');
+            if (!nama) return;
+            const kategori = prompt('Kategori:', 'Snack');
+            const stok = Number(prompt('Jumlah stok:', '10'));
+            const lokasi = prompt('Lokasi rak:', 'Rak D1');
+            if (!stok && stok !== 0) return;
+            gudang.push({
+                id: Date.now(),
+                name: nama,
+                category: kategori || 'Snack',
+                stock: stok,
+                unit: 'Pack',
+                location: lokasi || 'Rak D1',
+                status: stok > 10 ? 'Aman' : stok > 0 ? 'Rendah' : 'Habis'
+            });
+            renderGudang();
+        }
+
         function simpanConfigUrl() {
             const url = document.getElementById('inputScriptUrl').value.trim();
             if (!url) {
@@ -473,7 +819,6 @@
             alert('✅ URL berhasil disimpan!');
         }
 
-        // Logout
         function prosesLogout() {
             if (confirm('Apakah Anda yakin ingin keluar?')) {
                 currentUser = null;
@@ -485,16 +830,25 @@
             }
         }
 
-        // Lupa Password
         function lupaPassword() {
             alert('❓ Silakan hubungi admin untuk reset password');
         }
 
-        // Set focus saat halaman load
+        document.getElementById('searchProdukKasir')?.addEventListener('input', renderKasir);
+        document.getElementById('filterKategoriKasir')?.addEventListener('change', renderKasir);
+        document.getElementById('searchProdukTable')?.addEventListener('input', renderProduk);
+        document.getElementById('filterKategoriProduk')?.addEventListener('change', renderProduk);
+        document.getElementById('searchGudang')?.addEventListener('input', renderGudang);
+        document.getElementById('filterGudangKategori')?.addEventListener('change', renderGudang);
+        document.getElementById('filterGudangStatus')?.addEventListener('change', renderGudang);
+
         window.addEventListener('load', function() {
             document.getElementById('loginUser').focus();
+            renderDashboard();
+            renderKasir();
+            renderProduk();
+            renderGudang();
         });
     </script>
-
 </body>
 </html>
